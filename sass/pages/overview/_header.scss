@@ -1,0 +1,87 @@
+
+.header__backgroundSkew {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://images.pexels.com/photos/317157/pexels-photo-317157.jpeg?cs=srgb&dl=pexels-chevanon-photography-317157.jpg&fm=jpg);
+            background-position: center bottom;
+            background-size: cover;
+            position: relative;
+            z-index: -2;
+            opacity: 0.3;
+            top: 0;
+            grid-column: 1 / 11;
+            grid-row: header-start / header-end;
+            --slantCalc: 5rem;
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--slantCalc)), 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--slantCalc)), 0% 100%);
+}
+
+.header__backgroundSkew-2 {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://images.pexels.com/photos/317157/pexels-photo-317157.jpeg?cs=srgb&dl=pexels-chevanon-photography-317157.jpg&fm=jpg);
+    background-position: center bottom;
+    background-size: cover;
+    position: relative;
+    z-index: -2;
+    opacity: 0.5;
+    top: 0;
+    grid-column: 1 / 11;
+    grid-row: header-start / header-end;
+    --slantCalc: 7.5rem;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--slantCalc)), 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--slantCalc)), 0% 100%);
+}
+
+.header {
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2),), url('https://images.pexels.com/photos/317157/pexels-photo-317157.jpeg?cs=srgb&dl=pexels-chevanon-photography-317157.jpg&fm=jpg');
+    background-position: center bottom;
+    background-size: cover;
+    position: relative;
+    z-index: -1;
+    top:0;
+
+    grid-column: 1 / 11;
+    grid-row: header-start / header-end;
+    
+
+    --slantCalc: 10rem;
+    $bottom:  calc(100% - var(--slantCalc));
+    -webkit-clip-path: polygon(0  0, 100% 0, 100% $bottom, 0% 100%);
+    clip-path: polygon(0  0, 100% 0, 100% $bottom, 0% 100%);
+
+    &__textContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 200px;
+        width:900px;
+        font-family: 'Open Sans', sans-serif;
+
+        & hr {
+            display: block;
+            background-color: pink !important;
+            width: 30%;
+            margin: 0 auto;
+        }
+    }
+
+    &__heading {
+        color: white;
+        font-size: 8rem;
+
+        &--sub {
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Montserrat';
+            font-weight: 300;
+            letter-spacing: 1.5px;
+            font-size: 2.2rem;
+            align-self: center;
+        }
+
+        & span {
+            color: lightgreen
+        }
+    }
+}

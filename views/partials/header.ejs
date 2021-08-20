@@ -1,0 +1,55 @@
+    <div <% if (page_name === 'overview') { %> class="menu__menu-overviewPage menu" <% } %>  class="menu">
+        <ul  class="menu__container">
+            <a href="/" class="menu__container--item">
+                <li>
+                    HOME
+                </li>
+            </a>
+            <a href="/shop" class="menu__container--item">
+                <li>
+                    SHOP
+                </li>
+            </a>
+            <a href="#" class="menu__container--item">
+                <li>
+                    ABOUT US
+                </li>
+            </a>
+
+            <% if (!user) { %>
+                <a href="/login" class="menu__container--item">
+                    <li>
+                        LOGIN
+                    </li>
+                </a>
+                <a href="/signup" class="menu__container--item">
+                    <li>
+                        SIGN UP
+                    </li>
+                </a>            
+            <% } else { %>
+                <a href="/account" class="menu__container--item">
+                    <li>
+                        <%=user.name.toUpperCase() %>
+                        <script>
+                            <%=user.name %>.toUpperCase();
+                        </script>
+          
+                    </li>
+
+                    <!-- <% if (user.images[0]) { %>
+                        <img style="height: 50px; width: 50px; border-radius: 100%; margin-left: 10px;" src="<%=user.images[0].url %>" alt="">
+                    <% } %> -->
+                </a>
+                <a href="#" id="logoutBtn" class="menu__container--item">
+                    <li>
+                        LOG OUT
+                    </li>
+                </a>  
+            <% } %>
+
+        </ul>
+    </div>
+
+
+

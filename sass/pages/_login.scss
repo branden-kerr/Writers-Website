@@ -1,0 +1,11 @@
+
+
+.container-login {
+
+    grid-column: center-start / center-end;
+    display: grid;
+    grid-template-columns: repeat(10, minmax(min-content, 1fr));
+    grid-template-rows: 400px;
+    background-color: green;
+    
+}

@@ -1,0 +1,9 @@
+.container-signup {
+    grid-column: center-start / center-end;
+    grid-row: 2 / 3;
+
+    display: grid;
+    grid-template-columns: repeat(10, minmax(min-content, 1fr));
+    grid-template-rows: 300px;
+    background-color: mediumaquamarine;
+}

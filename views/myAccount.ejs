@@ -1,0 +1,184 @@
+<% layout('/layouts/boilerplate')%>
+
+
+
+
+<h1>
+    <%= user.name %>
+</h1>
+<h1>
+    <%= user.email %>
+</h1>
+
+<h1>
+    <img style="width: 350px;" src="<%= user.images[0].url %>" alt="">
+    
+</h1>
+<br>
+<h1>
+    ADD A NEW SURGERY
+</h1>
+
+<form style="font-size: 20px;" action="/api/v1/surgeries/createSurgery" method="POST">
+    <div class="form_group">
+        <label for="name">Name of surgery:</Address></label>
+        <input id="name" type="text"  name="name" required>
+    </div>
+    <div class="form_group">
+        <label for="date">Date of surgery:</Address></label>
+        <input id="date" type="date"  name="date" required>
+    </div>
+    <div class="form_group">
+        <label for="nameDoctor">Name of Doctor:</Address></label>
+        <input id="nameDoctor" type="text"  name="nameDoctor" >
+    </div>
+    <div class="form_group">
+        <label for="locationDoctor">Location of Doctor:</Address></label>
+        <input id="locationDoctor" type="text"  name="locationDoctor" >
+    </div>
+<input type="submit" value="add" >
+</form>
+
+<br>
+<br>
+<br>
+
+<h1 style="text-decoration: underline;">My Surgeries</h1>
+<table style="background-color: aliceblue; margin: 5px; font-size: 35px;">
+    <thead>
+        <tr>
+            <th style="background-color: lightsalmon; padding: 5px;">Surgery Type</th>
+            <th style="background-color: lightsalmon; padding: 5px;">Date Received:</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <% for(let surgery of userWithSurgeries.surgeries) { %>
+
+            <tr>
+                <td style="background-color: lightsalmon; padding: 5px;"><%= surgery.name %></td>
+                <td style="background-color: lightsalmon; padding: 5px;">
+                    <p><%= moment(surgery.dateReceived).format('Do MMMM, YYYY')  %></p>
+                </td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h1 style="font-size: 100px;">
+    There are
+    <%= doctors.length%>
+    doctors currently
+</h1>
+
+
+<div id='map' style='width: 900px; height: 500px;'></div>
+<!-- <script>
+mapboxgl.accessToken = '<%-process.env.MAPBOX_TOKEN %>';
+const map = new mapboxgl.Map({
+    container: 'map', // container ID
+    style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    center: [-74.5, 40], // starting position [lng, lat]
+    zoom: 9 // starting zoom
+});
+
+// Create a default Marker and add it to the map.
+var marker1 = new mapboxgl.Marker()
+.setLngLat([12.554729, 55.70651])
+.addTo(map);
+ 
+// Create a default Marker, colored black, rotated 45 degrees.
+var marker2 = new mapboxgl.Marker({ color: 'black', rotation: 45 })
+.setLngLat([12.65147, 55.608166])
+.addTo(map);
+</script> -->
+
+
+<script>
+    const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
+    const doctors = { features: <%- JSON.stringify(doctors) %>};
+    console.log(doctors);
+</script>
+
+
+<script src="/javascripts/clusterMap.js"></script>
+
+<br>
+<br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container" style="background-color: grey; margin: 0 auto; text-align: center;">
+    <input style="width: 50%; background-color: white;" class="search-input" type="text" placeholder="Search here..." />
+    <div class="suggestions">
+    </div>
+</div>
+
+<script>
+        const countries = [
+            { name: 'USA' },
+            { name: 'India' },
+            { name: 'Argentina' },
+            { name: 'Armenia' }
+        ];
+
+         const doctorsDropdown =  <%- JSON.stringify(doctors) %>;
+        
+        const searchInput = document.querySelector('.search-input');
+        const suggestionsPanel = document.querySelector('.suggestions');
+
+        searchInput.addEventListener('keyup', function () {
+            const input = searchInput.value;
+            suggestionsPanel.innerHTML = '';
+            const suggestions = doctorsDropdown.filter(function (doctor) {
+                return doctor.name.toLowerCase().startsWith(input);
+            });
+            suggestions.forEach(function (suggested) {
+                const div = document.createElement('div');
+                div.innerHTML = suggested.name;
+                suggestionsPanel.appendChild(div);
+            });
+            if (input === '') {
+                suggestionsPanel.innerHTML = '';
+            }
+        })
+</script>
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
