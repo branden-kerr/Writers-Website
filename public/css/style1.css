@@ -26,6 +26,92 @@
   grid-template-rows: 400px;
   background-color: green; }
 
+.container-account {
+  grid-column: center-start / center-end;
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-columns: repeat(10, [col-start] minmax(min-content, 1fr) [col-end]);
+  grid-template-rows: 70rem;
+  background-color: rosybrown; }
+
+.container-newStory {
+  grid-column: center-start / center-end;
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-columns: 15% 1fr 15%;
+  grid-template-rows: 10rem min-content 20rem; }
+
+.wysiwyg {
+  grid-column: 2/3;
+  grid-row: 2/3; }
+  .wysiwyg__form {
+    height: 100%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column; }
+    .wysiwyg__form__title {
+      font-size: 18px;
+      font-family: 'Spartan', sans-serif;
+      font-weight: 600;
+      color: #444444;
+      border-top-style: hidden;
+      border-right-style: hidden;
+      border-left-style: hidden;
+      border-bottom-style: groove;
+      background-color: white;
+      margin-top: 12rem;
+      margin-bottom: 12rem;
+      padding-top: .4rem; }
+      .wysiwyg__form__title:focus {
+        outline: none; }
+    .wysiwyg__form__form_group {
+      align-self: center; }
+    .wysiwyg__form__submitButton {
+      align-self: center;
+      outline: none;
+      margin-top: 10rem;
+      margin-bottom: 5rem;
+      background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
+      box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+      width: 200px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      height: 55px;
+      text-align: center;
+      border: none;
+      background-size: 300% 100%;
+      border-radius: 50px;
+      moz-transition: all .4s ease-in-out;
+      -o-transition: all .4s ease-in-out;
+      -webkit-transition: all .4s ease-in-out;
+      transition: all .4s ease-in-out; }
+      .wysiwyg__form__submitButton:hover {
+        background-position: 100% 0;
+        moz-transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
+        transition: all .4s ease-in-out; }
+
+#editor1 {
+  background-color: brown;
+  width: 400px;
+  height: 1000px; }
+
+.container-storyPage {
+  grid-column: center-start / center-end;
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-columns: minmax(min-content, 1fr);
+  grid-template-rows: 70rem;
+  background-color: #121458; }
+
+.displayStory {
+  display: flex;
+  flex-direction: column;
+  background-color: white; }
+
 .container-overview {
   grid-column: center-start / center-end;
   grid-row: 2 / 3;
@@ -88,7 +174,7 @@
     background-color: burlywood; }
 
 .header__backgroundSkew {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://images.pexels.com/photos/317157/pexels-photo-317157.jpeg?cs=srgb&dl=pexels-chevanon-photography-317157.jpg&fm=jpg);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/images/once-upon-a-time.png);
   background-position: center bottom;
   background-size: cover;
   position: relative;
@@ -102,7 +188,7 @@
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--slantCalc)), 0% 100%); }
 
 .header__backgroundSkew-2 {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://images.pexels.com/photos/317157/pexels-photo-317157.jpeg?cs=srgb&dl=pexels-chevanon-photography-317157.jpg&fm=jpg);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/images/once-upon-a-time.png);
   background-position: center bottom;
   background-size: cover;
   position: relative;
@@ -116,8 +202,7 @@
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--slantCalc)), 0% 100%); }
 
 .header {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://images.pexels.com/photos/317157/pexels-photo-317157.jpeg?cs=srgb&dl=pexels-chevanon-photography-317157.jpg&fm=jpg");
-  background-position: center bottom;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/images/once-upon-a-time.png");
   background-size: cover;
   position: relative;
   z-index: -1;
@@ -136,7 +221,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     height: 200px;
-    width: 900px;
+    width: 1050px;
     font-family: 'Open Sans', sans-serif; }
     .header__textContainer hr {
       display: block;
@@ -171,8 +256,7 @@
     display: flex;
     height: 100%;
     margin: 0 auto;
-    list-style: none;
-    background-color: burlywood; }
+    list-style: none; }
     .menu__container--item {
       flex-grow: 1;
       display: flex;
@@ -189,37 +273,59 @@
           color: #ffc400; }
 
 .section-1 {
-  background-color: rgba(168, 168, 168, 0.356);
   grid-column: 1 / 11;
   grid-row: section-1-start / section-1-end;
-  display: grid;
-  grid-template-columns: repeat(16, minmax(min-content, 1fr));
-  grid-template-rows: repeat(10, minmax(min-content, 1fr)); }
-  .section-1__content {
-    grid-column: 9/11;
-    grid-row: 1/3;
-    background-color: rgba(209, 52, 223, 0.384);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 100% 15%;
-    background-image: url("/images/David C. Chen.jpg"); }
-  .section-1__testIt {
-    grid-row: 4/6;
-    grid-column: 8/12;
-    background-color: violet; }
-    .section-1__testIt__insideBox {
-      background-color: yellow;
-      height: 50%;
-      width: 25%; }
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 50px; }
   .section-1__toBeNamedLaterText {
     font-family: 'Spartan', sans-serif;
     font-size: 1.4rem;
     text-transform: uppercase;
-    font-weight: 900;
-    grid-row: 2/4;
-    grid-column: 2/7; }
+    font-weight: 900; }
     .section-1__toBeNamedLaterText h2 {
       font-family: CooperHewitt; }
+
+.cardArea {
+  background-color: white;
+  display: flex; }
+  .cardArea__card {
+    background-color: white;
+    box-shadow: 0 0 10px 2px rgba(88, 88, 88, 0.5);
+    flex-grow: 1;
+    margin-right: 20px;
+    margin-top: 10px;
+    border-radius: 15px;
+    position: relative;
+    width: 200px;
+    height: 330px; }
+    .cardArea__card:hover {
+      box-shadow: 0 0 10px 5px rgba(88, 88, 88, 0.5);
+      transition: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+      transition: 0.5s; }
+    .cardArea__card:last-child {
+      margin-right: 0; }
+    .cardArea__card--backgroundPicture {
+      background-size: cover;
+      background-position: center center;
+      border-radius: 15px 15px 0 0;
+      width: 100%;
+      height: 40%; }
+      .cardArea__card--backgroundPicture--1 {
+        background-image: url("/images/featuredStories/redEye.jpg"); }
+      .cardArea__card--backgroundPicture--2 {
+        background-image: url("/images/featuredStories/The-Expanse.jpg"); }
+      .cardArea__card--backgroundPicture--3 {
+        background-image: url("/images/featuredStories/The-Fire.jpg");
+        background-position: center bottom; }
+      .cardArea__card--backgroundPicture--4 {
+        background-image: url("/images/featuredStories/The-Path.jpg"); }
+      .cardArea__card--backgroundPicture--5 {
+        background-image: url("/images/featuredStories/Clown.jpg"); }
+    .cardArea__card__AuthorPicture {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%; }
 
 .section-2 {
   background-color: green;

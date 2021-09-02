@@ -1,0 +1,17 @@
+.container-storyPage {
+    grid-column: center-start / center-end;
+    grid-row: 2 / 3;
+    display: grid;
+    // grid-template-columns: repeat(10, [col-start] minmax(min-content, 1fr) [col-end]);
+    grid-template-columns: minmax(min-content, 1fr);
+    grid-template-rows: 
+    70rem;
+
+    background-color: rgb(18, 20, 88);
+}
+
+.displayStory {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}

@@ -1,6 +1,6 @@
 
 .header__backgroundSkew {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://images.pexels.com/photos/317157/pexels-photo-317157.jpeg?cs=srgb&dl=pexels-chevanon-photography-317157.jpg&fm=jpg);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/images/once-upon-a-time.png);
             background-position: center bottom;
             background-size: cover;
             position: relative;
@@ -15,7 +15,7 @@
 }
 
 .header__backgroundSkew-2 {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(https://images.pexels.com/photos/317157/pexels-photo-317157.jpeg?cs=srgb&dl=pexels-chevanon-photography-317157.jpg&fm=jpg);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/images/once-upon-a-time.png);
     background-position: center bottom;
     background-size: cover;
     position: relative;
@@ -30,8 +30,8 @@
 }
 
 .header {
-    background:linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2),), url('https://images.pexels.com/photos/317157/pexels-photo-317157.jpeg?cs=srgb&dl=pexels-chevanon-photography-317157.jpg&fm=jpg');
-    background-position: center bottom;
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2),), url('/images/once-upon-a-time.png');
+    // background-position: center bottom;
     background-size: cover;
     position: relative;
     z-index: -1;
@@ -55,7 +55,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         height: 200px;
-        width:900px;
+        width:1050px;
         font-family: 'Open Sans', sans-serif;
 
         & hr {

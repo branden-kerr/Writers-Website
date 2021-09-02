@@ -29,15 +29,8 @@ const createSendToken = (user, statusCode, req, res) => {
   // Remove password from output
   user.password = undefined;
 
-  res.status(statusCode).redirect('http://127.0.0.1:3000')
+  res.status(200).json({ status: 'success' });
 
-  // .json({
-  //   status: 'success',
-  //   token,
-  //   data: {
-  //     user
-  //   }
-  // })
 };
 
 // Signup the user
@@ -50,9 +43,23 @@ exports.signUp = catchAsync(async (req, res, next) => {
     passwordConfirm: req.body.user['passwordConfirm'],
     images: req.files.map(f => ({ url: f.path, filename: f.filename }))
   });
-
-
   createSendToken(newUser, 201, req, res);
+});
+
+// Create New Story
+exports.newStory = catchAsync(async (req, res, next) => { 
+
+  
+  console.log(req.body);
+  console.log(req.body.title);
+
+
+    res.status(200).render('storyPage', {
+    page_name: 'storyPage',
+    body: req.body.editor1
+  });
+
+  next();
 });
 
 // Log the user in
@@ -72,7 +79,7 @@ exports.login = catchAsync(async (req, res, next) => {
   }
 
   // 3) If everything ok, send token to client
-  createSendToken(user, 200, req, res);
+  createSendToken(user, 201, req, res);
 });
 
 // Log the user out

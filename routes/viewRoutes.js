@@ -13,5 +13,6 @@ router.get('/shop', viewsController.getShop);
 router.get('/login', viewsController.getLogin);
 router.get('/signup', viewsController.getSignup);
 router.get('/account', viewsController.getMyAccount);
+router.get('/newStory', viewsController.getNewStory);
 
 module.exports = router;

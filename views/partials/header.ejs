@@ -10,11 +10,20 @@
                     SHOP
                 </li>
             </a>
-            <a href="#" class="menu__container--item">
+
+            <% if (!user) { %>
+            <a href="/login" class="menu__container--item">
                 <li>
-                    ABOUT US
+                    NEW STORY
                 </li>
             </a>
+            <% } else { %>
+                <a href="/newStory" class="menu__container--item">
+                    <li>
+                        NEW STORY
+                    </li>
+                </a>
+            <% } %>
 
             <% if (!user) { %>
                 <a href="/login" class="menu__container--item">
@@ -30,11 +39,7 @@
             <% } else { %>
                 <a href="/account" class="menu__container--item">
                     <li>
-                        <%=user.name.toUpperCase() %>
-                        <script>
-                            <%=user.name %>.toUpperCase();
-                        </script>
-          
+                        <%=user.name.toUpperCase() %>          
                     </li>
 
                     <!-- <% if (user.images[0]) { %>

@@ -1,0 +1,47 @@
+<% layout('/layouts/boilerplate')%>
+
+<div class="container-newStory">
+
+<!-- 
+    <div class="wysiwyg">
+        <script src='https://cdn.tiny.cloud/1/abppsj4k40id6uqck35s0evu0b6ctfa0bgqyr2kiwcq9di3s/tinymce/5/tinymce.min.js' referrerpolicy="origin"></script>
+        <script>
+        tinymce.init({
+          selector: '#mytextarea',
+          plugins: 'casechange'
+        });
+        </script>
+  
+      <h1>TinyMCE Quick Start Guide</h1>
+        <form st method="post">
+          <textarea id="mytextarea" name="mytextarea">Hello, World!</textarea>
+        </form>
+    </div> -->
+
+    
+
+
+    <script src="/ckeditor/ckeditor.js"></script>
+
+    <div class="wysiwyg">
+        <form class="wysiwyg__form" method="POST"  action="/api/v1/users/newStory" novalidate class="validated-form">
+
+          <div class="wysiwyg__form__form_group">
+            <label for="tile"></label>
+            <input class="wysiwyg__form__title" id="title" type="text" placeholder="Title..." name="title">
+          </div>
+
+            <textarea name="editor1" id="editor1" >
+                
+            </textarea>
+            <script>
+                // Replace the <textarea id="editor1"> with a CKEditor 4
+                // instance, using default configuration.
+                CKEDITOR.replace( 'editor1' );
+            </script>
+
+        <input class="wysiwyg__form__submitButton" type="submit" value="Create New Story" >
+        </form>
+    </div>
+</div>
+

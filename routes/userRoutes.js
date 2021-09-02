@@ -16,6 +16,7 @@ const router = express.Router();
 
 // Signup, login, and logout
 router.post('/signup', upload.array('image'), authController.signUp);
+router.post('/newStory', authController.newStory);
 router.post('/login', authController.login);
 router.get('/logout', authController.logout);
 

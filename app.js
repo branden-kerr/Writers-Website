@@ -66,6 +66,7 @@ app.use((req, res, next) => {
 })
 
 app.use((req, res, next)=>{
+  res.locals.page_name = '';
   res.locals.moment = moment;
   next();
 });
