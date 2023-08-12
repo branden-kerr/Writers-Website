@@ -1,0 +1,2 @@
+handle errors signing in
+change name on tab

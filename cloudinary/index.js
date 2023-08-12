@@ -3,23 +3,22 @@ const { CloudinaryStorage } = require('multer-storage-cloudinary');
 const dotenv = require('dotenv');
 dotenv.config({ path: './config.env' });
 
-
 cloudinary.config({
-    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-    api_key: process.env.CLOUDINARY_KEY,
-    api_secret: process.env.CLOUDINARY_SECRET
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_KEY,
+  api_secret: process.env.CLOUDINARY_SECRET
 });
 
-
 const storage = new CloudinaryStorage({
-    cloudinary,
-    params: {
-        folder: 'test',
-        allowedFormats: ['jpeg', 'png', 'jpg']
-    }
+  cloudinary,
+  params: {
+    folder: 'test',
+    allowedFormats: ['jpeg', 'png', 'jpg']
+  }
 });
 
 module.exports = {
-    cloudinary,
-    storage
+  cloudinary,
+  storage,
+
 }

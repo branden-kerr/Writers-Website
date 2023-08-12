@@ -8,8 +8,6 @@
   // border: 1px solid red;
 }
 
-// Fonts
-
 $menu-font: 'Montserrat';
 
 @font-face {
@@ -19,34 +17,19 @@ $menu-font: 'Montserrat';
   font-weight: 100;
 }
 
-
-
-$slant: 10rem;    
+$slant: 10rem;
 $page-padding: 1.75vw;
-
-// body {
-//   display: grid;
-//   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
-//   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
-// }
 
 .container {
   width: 100%;
   display: grid;
   padding-top: $page-padding;
 
-  grid-template-columns: 
-  
-  [margin-start] $page-padding [margin-end center-start]
-  repeat(10, [col-start] minmax(min-content, 1fr) [col-end])
-  [center-end margin2-start] 
-  $page-padding [margin2-end];
+  grid-template-columns:
 
-  grid-template-rows: 
-  repeat(3, min-content);
+    [margin-start] $page-padding [margin-end center-start] repeat(10, [col-start] minmax(min-content, 1fr) [col-end]) [center-end margin2-start] $page-padding [margin2-end];
 
-  // [margin-start] 1.75vw
-  // [margin-end menu-start] 5rem 
-  // [menu-end header-start] 70rem 
-  // [header-end] repeat(3, 200px) ;
+  grid-template-rows:
+    repeat(3, min-content);
+
 }

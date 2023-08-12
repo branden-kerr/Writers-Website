@@ -1,10 +1,6 @@
-const User = require("../models/userModel");
-const Doctor = require("../models/doctorModel");
 
 exports.getOverview = async (req, res, next) => {
-  // res.status(200).json({
-  //   data: 'Hey I got it',
-  // });
+
   res.status(200).render('overview', {
     page_name: 'overview'
   });
@@ -30,14 +26,6 @@ exports.getSignup = async (req, res, next) => {
 };
 
 exports.getMyAccount = async (req, res, next) => {
-
-  // const userWithSurgeries = await User.findById(res.locals.user._id).populate('surgeries');
-  // const doctors = await Doctor.find({});
-
-  // res.status(200).render('myAccount', {userWithSurgeries, doctors, page_name: 'myAccount'});
-  // res.status(200).render('account', {
-  //   page_name: 'account'
-  // })
   try {
     res.status(200).render('account', {
       page_name: 'account'
@@ -45,8 +33,6 @@ exports.getMyAccount = async (req, res, next) => {
   } catch (error) {
     console.log(error);
   }
-
-  
 }
 
 exports.getNewStory = async (req, res, next) => {

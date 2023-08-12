@@ -16,7 +16,9 @@ const signToken = (id) => {
 // Create and sent token to the user
 const createSendToken = (user, statusCode, req, res) => {
 
+  console.log(`userID: ' + ${user._id}`)
   const token = signToken(user._id);
+  console.log(`token: ' + ${token}`)
 
   res.cookie('jwt', token, {
     expires: new Date(
@@ -28,33 +30,33 @@ const createSendToken = (user, statusCode, req, res) => {
 
   // Remove password from output
   user.password = undefined;
-
-  res.status(200).json({ status: 'success' });
+  res.redirect('/');
 
 };
 
 // Signup the user
-exports.signUp = catchAsync(async (req, res, next) => { 
+exports.signUp = catchAsync(async (req, res, next) => {
+
 
   const newUser = await User.create({
     name: req.body.user['name'],
     email: req.body.user['email'],
     password: req.body.user['password'],
     passwordConfirm: req.body.user['passwordConfirm'],
-    images: req.files.map(f => ({ url: f.path, filename: f.filename }))
+    images: {
+      url: req.file.path,
+      filename: req.file.filename
+    }
   });
   createSendToken(newUser, 201, req, res);
 });
 
 // Create New Story
-exports.newStory = catchAsync(async (req, res, next) => { 
-
-  
+exports.newStory = catchAsync(async (req, res, next) => {
   console.log(req.body);
   console.log(req.body.title);
 
-
-    res.status(200).render('storyPage', {
+  res.status(200).render('storyPage', {
     page_name: 'storyPage',
     body: req.body.editor1
   });
@@ -65,6 +67,8 @@ exports.newStory = catchAsync(async (req, res, next) => {
 // Log the user in
 exports.login = catchAsync(async (req, res, next) => {
   const { email, password } = req.body;
+
+  console.log('got to login')
 
   // 1) Check if email and passowrd exist
   if (!email || !password) {
@@ -88,7 +92,7 @@ exports.logout = async (req, res) => {
     expires: new Date(Date.now() + 10 * 1000),
     httpOnly: true,
   });
-  res.status(200).json({ status: 'success' });
+  res.redirect('/')
 };
 
 // Protect a particular route
@@ -161,7 +165,7 @@ exports.isLoggedIn = async (req, res, next) => {
 
       // THERE IS A LOGGED IN USER
       res.locals.user = currentUser;
-      
+
       return next();
     } catch (err) {
       console.log(err.message);
@@ -169,7 +173,6 @@ exports.isLoggedIn = async (req, res, next) => {
     }
 
   }
-
   // res.locals.user = 'something';
   next();
 };

@@ -94,11 +94,6 @@
         -webkit-transition: all .4s ease-in-out;
         transition: all .4s ease-in-out; }
 
-#editor1 {
-  background-color: brown;
-  width: 400px;
-  height: 1000px; }
-
 .container-storyPage {
   grid-column: center-start / center-end;
   grid-row: 2 / 3;
@@ -117,7 +112,7 @@
   grid-row: 2 / 3;
   display: grid;
   grid-template-columns: repeat(10, [col-start] minmax(min-content, 1fr) [col-end]);
-  grid-template-rows: [header-start] 70rem [header-end section-1-start] 800px [section-1-end section-2-start] 600px [section-2-end section-3-start] 600px [section-3-end]; }
+  grid-template-rows: [header-start] 70rem [header-end section-1-start] 530px [section-1-end section-2-start] 600px; }
 
 .container-signup {
   grid-column: center-start / center-end;

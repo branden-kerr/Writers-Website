@@ -1,45 +1,43 @@
 .menu {
-    display: block;
-    position: relative;
-    height: 4.5rem;
+  display: block;
+  position: relative;
+  height: 4.5rem;
 
-    background-color: red;
-    grid-column: center-start / center-end;
-    // grid-row: 2 / 3;
+  background-color: red;
+  grid-column: center-start / center-end;
 
-    &__menu-overviewPage {
-        grid-row: 2 / 3;
-        background-color: transparent;
-        margin-top: 1.75vw;
-    }
+  &__menu-overviewPage {
+    grid-row: 2 / 3;
+    background-color: transparent;
+    margin-top: 1.75vw;
+  }
 
+  &__container {
+    display: flex;
+    height: 100%;
+    margin: 0 auto;
+    list-style: none;
 
-    &__container {
-        display: flex;
-        height: 100%;
-        margin: 0 auto;
-        list-style: none;
+    // background-color: black;
 
-        // background-color: black;
+    &--item {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      text-decoration: none;
 
-        &--item {
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height:100%;
-            text-decoration: none;
+      &>li {
+        color: white;
+        font-size: 2rem;
+        font-family: 'Eagle Lake', cursive;
+        font-family: 'Montserrat';
 
-            & > li {
-                color: white;
-                font-size: 2rem;
-                font-family: 'Eagle Lake', cursive;
-                font-family: 'Montserrat';
-
-                &:hover {
-                    color: rgb(255, 196, 0)
-                }
-            }
+        &:hover {
+          color: rgb(255, 196, 0)
         }
+      }
     }
+  }
 }

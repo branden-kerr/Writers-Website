@@ -1,53 +1,26 @@
 <% layout('/layouts/boilerplate')%>
 
-
-<!-- <form id="signupForm" action=""  enctype="multipart/form-data">
-    <div class="form_group">
-        <label for="name">Name</Address></label>
-        <input id="name" type="text" placeholder="Your Name">
-    </div>
-    <div class="form_group">
-        <label for="email">Email Address</Address></label>
-        <input id="email" type="email" placeholder="email">
-    </div>
-    <div class="form_group">
-        <label for="password">Password</Address></label>
-        <input id="password" type="password" placeholder="password">
-    </div>
-    <div class="form_group">
-        <label for="passwordConfirm">Password Confirm</Address></label>
-        <input id="passwordConfirm" type="password" placeholder="Confirm Password">
-    </div>
-    <div class="form_group">
-        <input id="image" type="file" accept="image/*" name="photo" >
-    </div>
-<button>submit</button>
-</form> -->
-
-<div class="container-signup">
+  <div class="container-signup">
     <form action="/api/v1/users/signup/" novalidate method="POST" class="validated-form" enctype="multipart/form-data">
-        <div class="form_group">
-            <label for="name">Name</Address></label>
-            <input id="name" type="text" placeholder="Your Name" name="user[name]">
-        </div>
-        <div class="form_group">
-            <label for="email">Email Address</Address></label>
-            <input id="email" type="email" placeholder="email" name="user[email]">
-        </div>
-        <div class="form_group">
-            <label for="password">Password</Address></label>
-            <input id="password" type="password" placeholder="password" name="user[password]">
-        </div>
-        <div class="form_group">
-            <label for="passwordConfirm">Password Confirm</Address></label>
-            <input id="passwordConfirm" type="password" placeholder="Confirm Password" name="user[passwordConfirm]">
-        </div>
-        <div class="form_group">
-            <input type="file" id="image" name="image" multiple>
-    
-        </div>
-        HELLO!
-    <input type="submit" value="log in" >
+      <div class="form_group">
+        <label for="name">Name</Address></label>
+        <input id="name" type="text" placeholder="Your Name" name="user[name]">
+      </div>
+      <div class="form_group">
+        <label for="email">Email Address</Address></label>
+        <input id="email" type="email" placeholder="email" name="user[email]">
+      </div>
+      <div class="form_group">
+        <label for="password">Password</Address></label>
+        <input id="password" type="password" placeholder="password" name="user[password]">
+      </div>
+      <div class="form_group">
+        <label for="passwordConfirm">Password Confirm</Address></label>
+        <input id="passwordConfirm" type="password" placeholder="Confirm Password" name="user[passwordConfirm]">
+      </div>
+      <div class="form_group">
+        <input type="file" id="image" name="image" multiple>
+      </div>
+      <input type="submit" value="log in">
     </form>
-</div>
-
+  </div>

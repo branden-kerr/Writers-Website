@@ -10,6 +10,13 @@ const storySchema = new mongoose.Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
+  coverPicture: {
+    type: String,
+  },
+  body: {
+    type: String,
+  },
+
   dateReceived: Date,
 });
 

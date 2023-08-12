@@ -2,20 +2,15 @@ const express = require('express');
 const userController = require('../controllers/userController');
 const authController = require('../controllers/authController');
 const multer = require('multer');
-const { storage } = require('../cloudinary');
+const { storage, } = require('../cloudinary');
 const upload = multer({ storage });
-
 const router = express.Router();
 
-// , (req, res) => {
-//     console.log('NO ERROR YET')
-//     console.log(req.body, req.files);
-//     res.send("IT WORKED");
-// }
+router.post('/signup', upload.single('image'), async (req, res, next) => {
+  console.log('got to signup');
+  await authController.signUp(req, res, next);
 
-
-// Signup, login, and logout
-router.post('/signup', upload.array('image'), authController.signUp);
+});
 router.post('/newStory', authController.newStory);
 router.post('/login', authController.login);
 router.get('/logout', authController.logout);

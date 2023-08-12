@@ -1,19 +1,15 @@
 <% layout('/layouts/boilerplate')%>
 
-<div class="container-login">
-    <form id="form" action="">
-        <div class="form_group">
-            <label for="email">Email Address</Address></label>
-            <input id="email" type="email" placeholder="email">
-        </div>
-        <div class="form_group">
-            <label for="password">Email Address</Address></label>
-            <input id="password" type="password" placeholder="password">
-        </div>
-    <button>submit</button>
+  <div class="container-login">
+    <form id="form" action="/api/v1/users/login" method="POST">
+      <div class="form_group">
+        <label for="email">Email Address</label>
+        <input id="email" type="email" placeholder="Email" name="email">
+      </div>
+      <div class="form_group">
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="Password" name="password">
+      </div>
+      <button type="submit">Submit</button>
     </form>
-</div>
-
-
-
-
+  </div>

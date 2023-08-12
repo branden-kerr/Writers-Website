@@ -1,96 +1,76 @@
 .container-newStory {
-    grid-column: center-start / center-end;
-    grid-row: 2 / 3;    
-    display: grid;
-    grid-template-columns: 15% 1fr 15%;
-   
-    grid-template-rows: 
-     10rem min-content 20rem;
-
-    // background-color: salmon;
+  grid-column: center-start / center-end;
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-columns: 15% 1fr 15%;
+  grid-template-rows:
+    10rem min-content 20rem;
 }
 
 .wysiwyg {
-    grid-column: 2/3;
-    grid-row: 2/3;
-    // background-color: cadetblue;
+  grid-column: 2/3;
+  grid-row: 2/3;
 
-    
+  &__form {
+    height: 100%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
 
-    &__form {
-        height: 100%;
-        justify-content: space-between;
-        display: flex;
-        flex-direction: column;
+    &__title {
+      font-size: 18px;
+      font-family: 'Spartan', sans-serif;
+      font-weight: 600;
+      color: rgb(68, 68, 68);
+      border-top-style: hidden;
+      border-right-style: hidden;
+      border-left-style: hidden;
+      border-bottom-style: groove;
+      background-color: rgb(255, 255, 255);
 
-        &__title {
-            font-size: 18px;
-            font-family: 'Spartan', sans-serif;
-            font-weight: 600;
+      margin-top: 12rem;
+      margin-bottom: 12rem;
 
-            color: rgb(68, 68, 68);
+      padding-top: .4rem;
 
-            border-top-style: hidden;
-            border-right-style: hidden;
-            border-left-style: hidden;
-            border-bottom-style: groove;
-            background-color: rgb(255, 255, 255);
-            
-            margin-top: 12rem;
-            margin-bottom: 12rem;
-
-            padding-top: .4rem;
-
-            &:focus {
-                outline: none;
-            }
-        }
-
-        &__form_group {
-            align-self: center;
-        }
-
-        &__submitButton {
-            align-self: center;
-            outline: none;
-
-            margin-top: 10rem;
-            margin-bottom: 5rem;
-
-            background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
-            box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
-
-            width: 200px;
-            font-size: 16px;
-            font-weight: 600;
-            color: #fff;
-            cursor: pointer;
-            // margin: 20px;
-            height: 55px;
-            text-align:center;
-            border: none;
-            background-size: 300% 100%;
-        
-            border-radius: 50px;
-            moz-transition: all .4s ease-in-out;
-            -o-transition: all .4s ease-in-out;
-            -webkit-transition: all .4s ease-in-out;
-            transition: all .4s ease-in-out;
-
-            &:hover {
-                background-position: 100% 0;
-                moz-transition: all .4s ease-in-out;
-                -o-transition: all .4s ease-in-out;
-                -webkit-transition: all .4s ease-in-out;
-                transition: all .4s ease-in-out;
-            }
-        }
+      &:focus {
+        outline: none;
+      }
     }
 
-}
+    &__form_group {
+      align-self: center;
+    }
 
-#editor1 {
-background-color: brown;
-    width: 400px;
-    height: 1000px;
+    &__submitButton {
+      align-self: center;
+      outline: none;
+      margin-top: 10rem;
+      margin-bottom: 5rem;
+      background-image: linear-gradient(to right, #fc6076, #ff9a44, #ef9d43, #e75516);
+      box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+      width: 200px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      height: 55px;
+      text-align: center;
+      border: none;
+      background-size: 300% 100%;
+      border-radius: 50px;
+      moz-transition: all .4s ease-in-out;
+      -o-transition: all .4s ease-in-out;
+      -webkit-transition: all .4s ease-in-out;
+      transition: all .4s ease-in-out;
+
+      &:hover {
+        background-position: 100% 0;
+        moz-transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
+        transition: all .4s ease-in-out;
+      }
+    }
+  }
 }
