@@ -8,10 +8,15 @@
 
   <div class="container-newStory">
     <div class="wysiwyg">
-      <form class="wysiwyg__form" method="POST" action="/api/v1/users/newStory" novalidate class="validated-form">
+      <form class="wysiwyg__form" method="POST" action="/api/v1/stories/newStory" enctype="multipart/form-data"
+        novalidate class="validated-form">
         <div class="wysiwyg__form__form_group">
           <label for="tile"></label>
           <input class="wysiwyg__form__title" id="title" type="text" placeholder="Title..." name="title">
+        </div>
+        <div class="wysiwyg__form__form_group">
+          <label for="image">Image</label>
+          <input type="file" id="image" name="image">
         </div>
         <textarea name="editor1" id="editor1">
             </textarea>

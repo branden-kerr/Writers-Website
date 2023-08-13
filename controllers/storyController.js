@@ -1,4 +1,4 @@
-const User = require('./../models/storiesModel');
+const Story = require('./../models/storiesModel');
 
 exports.getAllStories = async (req, res, next) => {
   try {
@@ -20,8 +20,15 @@ exports.getStoryById = async (req, res, next) => {
 
 exports.createStory = async (req, res, next) => {
   try {
-    const story = await Story.create(req.body);
-    res.status(201).json(story);
+    const story = await Story.create({
+      title: req.body.title,
+      coverPicture: {
+        url: req.file.path,
+        filename: req.file.filename
+      },
+      body: req.body.editor1,
+    });
+    res.redirect('/');
   } catch (err) {
     next(err);
   }

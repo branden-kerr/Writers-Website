@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-
 const storySchema = new mongoose.Schema({
   title: {
     type: String,
@@ -10,13 +9,14 @@ const storySchema = new mongoose.Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
+  userName: String,
   coverPicture: {
-    type: String,
+    url: String,
+    filename: String
   },
   body: {
     type: String,
   },
-
   dateReceived: Date,
 });
 

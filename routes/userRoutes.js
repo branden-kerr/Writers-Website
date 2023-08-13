@@ -11,7 +11,6 @@ router.post('/signup', upload.single('image'), async (req, res, next) => {
   await authController.signUp(req, res, next);
 
 });
-router.post('/newStory', authController.newStory);
 router.post('/login', authController.login);
 router.get('/logout', authController.logout);
 

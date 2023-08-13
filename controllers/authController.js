@@ -51,19 +51,6 @@ exports.signUp = catchAsync(async (req, res, next) => {
   createSendToken(newUser, 201, req, res);
 });
 
-// Create New Story
-exports.newStory = catchAsync(async (req, res, next) => {
-  console.log(req.body);
-  console.log(req.body.title);
-
-  res.status(200).render('storyPage', {
-    page_name: 'storyPage',
-    body: req.body.editor1
-  });
-
-  next();
-});
-
 // Log the user in
 exports.login = catchAsync(async (req, res, next) => {
   const { email, password } = req.body;

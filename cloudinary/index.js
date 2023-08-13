@@ -16,9 +16,16 @@ const storage = new CloudinaryStorage({
     allowedFormats: ['jpeg', 'png', 'jpg']
   }
 });
+const coverImagesStorage = new CloudinaryStorage({
+  cloudinary,
+  params: {
+    folder: 'coverImages',
+    allowedFormats: ['jpeg', 'png', 'jpg']
+  }
+});
 
 module.exports = {
   cloudinary,
   storage,
-
+  coverImagesStorage
 }

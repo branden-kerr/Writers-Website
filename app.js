@@ -5,6 +5,7 @@ const cors = require('cors');
 const ejsMate = require('ejs-mate');
 const viewRouter = require('./routes/viewRoutes');
 const userRouter = require('./routes/userRoutes');
+const storyRouter = require('./routes/StoryRoutes');
 const AppError = require('./utils/AppError');
 const dotenv = require('dotenv');
 const globalErrorHandler = require('./controllers/errorController');
@@ -59,16 +60,11 @@ app.use((req, res, next) => {
   next();
 });
 
-// app.use((req, res, next) => {
-//   if (!req.user && req.originalUrl !== '/' && req.originalUrl !== '/signup' && req.originalUrl !== '/login') {
-//     return res.redirect('/');
-//   }
-//   next();
-// });
-
 // Routes
 app.use('/', viewRouter);
 app.use('/api/v1/users', userRouter);
+app.use('/api/v1/users', userRouter);
+app.use('/api/v1/stories', storyRouter);
 
 // 404 for not defined pages
 app.all('*', (req, res, next) => {
