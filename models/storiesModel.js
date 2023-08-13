@@ -20,9 +20,6 @@ const storySchema = new mongoose.Schema({
   dateReceived: Date,
 });
 
-
-
 const Story = mongoose.model('Story', storySchema);
-
 
 module.exports = Story;

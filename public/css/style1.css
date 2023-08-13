@@ -241,7 +241,7 @@
   display: block;
   position: relative;
   height: 4.5rem;
-  background-color: red;
+  background-color: #2067b3;
   grid-column: center-start / center-end; }
   .menu__menu-overviewPage {
     grid-row: 2 / 3;
