@@ -5,15 +5,13 @@ const storySchema = new mongoose.Schema({
   title: {
     type: String,
   },
-  user: {
-    type: Schema.Types.ObjectId,
-    ref: 'User'
-  },
-  userName: String,
   coverPicture: {
     url: String,
     filename: String
   },
+  userId: String,
+  userName: String,
+  userImage: String,
   body: {
     type: String,
   },

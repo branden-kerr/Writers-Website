@@ -11,7 +11,7 @@
           </span>
         </h1>
         <hr>
-        <h3 class="header__heading--sub">Smart Decisions. Good Data. Informed pursuits.</h3>
+        <h3 class="header__heading--sub">Short Stories. Engaging Narratives. Unleashed Imaginations.</h3>
       </div>
     </div>
 
@@ -24,33 +24,20 @@
           Featured Stories
         </h1>
         <h2>
-          Get someone with a proven track record
+          Read from one of the selected stories
         </h2>
       </div>
       <div class="cardArea">
-        <div class="cardArea__card">
-          <div class="cardArea__card--backgroundPicture cardArea__card--backgroundPicture--1"></div>
-        </div>
-        <div class="cardArea__card">
-          <div class="cardArea__card--backgroundPicture cardArea__card--backgroundPicture--2"></div>
-        </div>
-        <div class="cardArea__card">
-          <div class="cardArea__card--backgroundPicture cardArea__card--backgroundPicture--3"></div>
-        </div>
-        <div class="cardArea__card">
-          <div class="cardArea__card--backgroundPicture cardArea__card--backgroundPicture--4"></div>
-        </div>
-        <div class="cardArea__card">
-          <div class="cardArea__card--backgroundPicture cardArea__card--backgroundPicture--5"></div>
-        </div>
+        <% featuredStories.forEach((story, index)=> { %>
+          <div class="cardArea__card">
+            <div class="cardArea__card--backgroundPicture cardArea__card--backgroundPicture--<%= index + 1 %>"
+              style="background-image: url('<%= story.coverPicture %>');"></div>
+          </div>
+          <% }); %>
       </div>
     </div>
     <div class="section-2">
-
     </div>
-    <!-- <div class="section-3">
-
-    </div> -->
   </div>
 
   <script src="/javascripts/typewriter.js"></script>

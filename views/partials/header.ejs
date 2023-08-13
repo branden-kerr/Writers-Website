@@ -5,11 +5,7 @@
           HOME
         </li>
       </a>
-      <a href="/shop" class="menu__container--item">
-        <li>
-          SHOP
-        </li>
-      </a>
+
       <a href="/newStory" class="menu__container--item">
         <li>
           NEW STORY
@@ -29,10 +25,10 @@
         </a>
         <% } else { %>
           <a href="/account" class="menu__container--item">
-            <li>
+            <li class="menu__container--item">
               <%=user.name %>
                 <% if (user.images[0]) { %>
-                  <img style="height: 50px; width: 50px; border-radius: 100%; margin-left: 10px;"
+                  <img style="height: 40px; width: 40px; border-radius: 100%; margin-left: 10px;"
                     src="<%=user.images[0].url %>" alt="">
                   <% } %>
             </li>

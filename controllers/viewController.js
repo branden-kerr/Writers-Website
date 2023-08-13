@@ -1,9 +1,18 @@
 
-exports.getOverview = async (req, res, next) => {
+const FeaturedStory = require('../models/featuredStories');
 
-  res.status(200).render('overview', {
-    page_name: 'overview'
-  });
+exports.getOverview = async (req, res, next) => {
+  try {
+    // Create a new story
+    const featuredStories = await FeaturedStory.find({});
+    res.status(200).render('overview', {
+      page_name: 'overview',
+      featuredStories: featuredStories
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send({ error: 'An error occurred fetching the featured stories' });
+  }
 };
 
 exports.getShop = async (req, res, next) => {

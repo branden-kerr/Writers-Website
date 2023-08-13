@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const storyController = require('../controllers/storyController');
+const authController = require('../controllers/authController');
 const multer = require('multer');
 const { storage, } = require('../cloudinary');
 const upload = multer({ storage });
@@ -12,8 +13,10 @@ router.get('/', storyController.getAllStories);
 router.get('/:id', storyController.getStoryById);
 
 // Create a new story
-router.post('/newStory', upload.single('image'), async (req, res, next) => {
+router.post('/newStory', authController.isLoggedIn, upload.single('image'), async (req, res, next) => {
   console.log('got to the right route for new story')
+  console.log(req.user)
+  console.log(res.locals.user)
   await storyController.createStory(req, res, next);
 
 });

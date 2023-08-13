@@ -19,6 +19,7 @@ exports.getStoryById = async (req, res, next) => {
 };
 
 exports.createStory = async (req, res, next) => {
+
   try {
     const story = await Story.create({
       title: req.body.title,
@@ -26,7 +27,11 @@ exports.createStory = async (req, res, next) => {
         url: req.file.path,
         filename: req.file.filename
       },
+      userId: req.user._id,
+      userName: req.user.name,
+      userImage: req.user.images[0].url,
       body: req.body.editor1,
+      dateReceived: Date.now(),
     });
     res.redirect('/');
   } catch (err) {
