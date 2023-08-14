@@ -23,10 +23,7 @@ exports.createStory = async (req, res, next) => {
   try {
     const story = await Story.create({
       title: req.body.title,
-      coverPicture: {
-        url: req.file.path,
-        filename: req.file.filename
-      },
+      coverPicture: req.file.path,
       userId: req.user._id,
       userName: req.user.name,
       userImage: req.user.images[0].url,

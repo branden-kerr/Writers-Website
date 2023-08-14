@@ -1,13 +1,16 @@
 
 const FeaturedStory = require('../models/featuredStories');
+const Story = require('../models/storiesModel');
 
 exports.getOverview = async (req, res, next) => {
   try {
     // Create a new story
     const featuredStories = await FeaturedStory.find({});
+    const stories = await Story.find({}).sort({ dateReceived: -1 });
     res.status(200).render('overview', {
       page_name: 'overview',
-      featuredStories: featuredStories
+      featuredStories: featuredStories,
+      stories: stories
     });
   } catch (err) {
     console.error(err);

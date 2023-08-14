@@ -4,5 +4,5 @@
   display: grid;
   grid-template-columns: repeat(10, [col-start] minmax(min-content, 1fr) [col-end]);
   grid-template-rows:
-    [header-start] 70rem [header-end section-1-start] 530px [section-1-end section-2-start] 600px
+    [header-start] 70rem [header-end section-1-start] 530px [section-1-end section-2-start] 150vh [section-2-end]
 }

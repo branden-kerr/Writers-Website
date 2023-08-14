@@ -5,10 +5,7 @@ const storySchema = new mongoose.Schema({
   title: {
     type: String,
   },
-  coverPicture: {
-    url: String,
-    filename: String
-  },
+  coverPicture: String,
   userId: String,
   userName: String,
   userImage: String,

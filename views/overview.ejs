@@ -1,5 +1,6 @@
 <% layout('/layouts/boilerplate')%>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
 
   <div class="container-overview">
     <div class="header">
@@ -31,13 +32,71 @@
         <% featuredStories.forEach((story, index)=> { %>
           <div class="cardArea__card">
             <div class="cardArea__card--backgroundPicture cardArea__card--backgroundPicture--<%= index + 1 %>"
-              style="background-image: url('<%= story.coverPicture %>');"></div>
+              style="background-image: url('<%= story.coverPicture %>');">
+            </div>
+            <p class="cardArea__card--bodyText">
+              <%= story.body ? story.body + '...' : '' %>
+            </p>
+            <div class="cardArea__card--userImage" style="background-image: url('<%= story.userImage %>');"></div>
           </div>
           <% }); %>
       </div>
     </div>
+
     <div class="section-2">
+      <div style="  padding: 50px;" class="section-1__toBeNamedLaterText">
+        <h1>
+          Selection of Stories
+        </h1>
+        <h2>
+          add your own with <a href="/newStory">new story</a>
+        </h2>
+      </div>
+      <% if (stories && stories.length> 0) { %>
+        <% stories.forEach((currentStory)=> { %>
+          <div class="section-2__story-container" style="background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('<%= currentStory.coverPicture %>');
+             background-size: cover;
+             background-repeat: no-repeat;
+              background-position: center center;
+             
+             ">
+            <h2 class="section-2__story-container__title">
+              <%= currentStory.title %>
+            </h2>
+            <p class="section-2__story-container__author">
+              <%= currentStory.userName %>
+            </p>
+            <img src="<%= currentStory.userImage %>" alt="" class="section-2__story-container__authorImage">
+            <div class="section-2__story-container__story" style="font-size: 16px;
+            font-family: 'Spartan', sans-serif;
+            font-weight: 400;
+            text-align: center;
+            margin: 30px;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            padding-right: 5%;
+            padding-left: 5%;
+            line-height: 2.1;
+            overflow: auto;">
+              <%- currentStory.body %>
+            </div>
+            <!-- <button class="section-2__story-container__button section-2__story-container__button--1" id="prev-btn"
+              onclick="changeStory('prev')">
+              <i class="fas fa-arrow-left"></i>
+            </button>
+            <button class="section-2__story-container__button section-2__story-container__button--2" id="next-btn"
+              onclick="changeStory('next')">
+              <i class="fas fa-arrow-right"></i>
+            </button> -->
+          </div>
+          <% }); %>
+            <% } else { %>
+              <p class="no-stories">No stories available.</p>
+              <% } %>
     </div>
+
+
   </div>
+
 
   <script src="/javascripts/typewriter.js"></script>
