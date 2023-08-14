@@ -1,26 +1,29 @@
 <% layout('/layouts/boilerplate')%>
 
   <div class="container-signup">
-    <form action="/api/v1/users/signup/" novalidate method="POST" class="validated-form" enctype="multipart/form-data">
+    <form action="/api/v1/users/signup/" novalidate method="POST" class="validated-form" id="form"
+      enctype="multipart/form-data">
       <div class="form_group">
-        <label for="name">Name</Address></label>
-        <input id="name" type="text" placeholder="Your Name" name="user[name]">
+        <label for="name">Name</label>
+        <input id="name" type="text" placeholder="Name" name="user[name]">
       </div>
       <div class="form_group">
-        <label for="email">Email Address</Address></label>
+        <label for="email">Email Address</label>
         <input id="email" type="email" placeholder="email" name="user[email]">
       </div>
       <div class="form_group">
-        <label for="password">Password</Address></label>
+        <label for="password">Password</label>
         <input id="password" type="password" placeholder="password" name="user[password]">
       </div>
       <div class="form_group">
-        <label for="passwordConfirm">Password Confirm</Address></label>
+        <label for="passwordConfirm">Password Confirm</label>
         <input id="passwordConfirm" type="password" placeholder="Confirm Password" name="user[passwordConfirm]">
       </div>
       <div class="form_group">
+        <label for="image">Profile Picture</label>
+
         <input type="file" id="image" name="image" multiple>
       </div>
-      <input type="submit" value="log in">
+      <input type="submit" value="Sign Up">
     </form>
   </div>
