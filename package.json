@@ -9,7 +9,7 @@
     "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --public-url /js --out-file bundle.js",
     "build:js": "parcel build ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
     "convert:css": "node-sass sass/main.scss public/css/style1.css",
-    "watch:sass": "node-sass sass/main.scss public/css/style1.css -w",
+    "watch:sass": "node-sass sass/main.scss public/css/style1.css -w"
   },
   "keywords": [
     "writer-website"
