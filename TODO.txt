@@ -1,2 +1,3 @@
 handle errors signing in
 change name on tab
+hook up featured stories to show on click
